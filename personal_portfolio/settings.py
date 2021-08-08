@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages' ,
+
     'blog',
     'portfolio',
 ]
@@ -135,6 +137,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
 
 STATICFILES_DIRS =  (os.path.join(BASE_DIR, 'static'),)
 
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 # 以前寫法會寫 MEDIA_ROOT = os.path.join(BASE_DIR / 'media'),現在寫下面這種方式即可
 
 
@@ -148,6 +152,16 @@ except ImportError:
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AWS_QUERYSTRING_AUTH = False
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+
+AWS_STORAGE_BUCKET_NAME = 'jacobportfolio-bucket'
 
 if os.getcwd() == '/app':
     DEBUG = False
