@@ -137,6 +137,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
 
 STATICFILES_DIRS =  (os.path.join(BASE_DIR, 'static'),)
 
+CORS_ALLOW_ALL_ORIGINS = True
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # 以前寫法會寫 MEDIA_ROOT = os.path.join(BASE_DIR / 'media'),現在寫下面這種方式即可
