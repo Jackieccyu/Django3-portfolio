@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-bgc(#mo#khjdsr(2%f-j(ty**rbn-*0m6w_ql&mv0g7k(9^j*=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['cian421.pythonanywhere.com']
-
+# ALLOWED_HOSTS = ['cian421.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'maplebabyshop.herokuapp.com']
 
 # Application definition
 
