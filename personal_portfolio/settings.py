@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-bgc(#mo#khjdsr(2%f-j(ty**rbn-*0m6w_ql&mv0g7k(9^j*='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS = ['cian421.pythonanywhere.com']
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'jacobportfolio.herokuapp.com']
@@ -121,10 +121,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = (BASE_DIR / 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = (BASE_DIR / 'media')
+
+STATICFILES_DIRS = os.path.join[
+    BASE_DIR /  'static',
+    BASE_DIR / 'portfolio/build/static'
+]
 
 # 以前寫法會寫 MEDIA_ROOT = os.path.join(BASE_DIR / 'media'),現在寫下面這種方式即可
 
